@@ -1,0 +1,47 @@
+# Layout Sederhana - Portal Artikel & Informasi
+
+Proyek ini adalah implementasi antarmuka halaman depan (*frontend client-face*) berbasis komponen web dinamis. Aplikasi ini berfungsi untuk menampilkan daftar artikel yang diambil secara langsung dari sistem server, lengkap dengan navigasi halaman statis pendukung seperti halaman *About* dan *Kontak*.
+
+---
+
+## 🚀 Fitur Utama
+
+- **Navigasi Berbasis Komponen**: Perpindahan menu halaman (Home, Artikel, About, Kontak) secara dinamis menggunakan sistem routing sisi klien.
+- **Integrasi Data Dinamis**: Menampilkan konten artikel terbaru yang disinkronisasikan langsung melalui port server lokal.
+- **Desain Widget Sidebar**: Dilengkapi dengan area widget teks samping (*sidebar template*) untuk menaruh informasi tambahan atau tautan pelengkap.
+- **Layout Terstruktur**: Menggunakan arsitektur layout web standar yang terdiri atas *Header*, *Navigation Bar*, *Main Content Area*, *Sidebar*, dan *Footer*.
+
+---
+
+## 📸 Dokumentasi Antarmuka Halaman
+
+Berikut adalah tampilan struktur menu pada aplikasi Layout Sederhana:
+
+### 1. Halaman Utama (Home) / Halaman About
+Seperti yang ditunjukkan pada **Screenshot 2026-06-23 130106.png** dan **Screenshot 2026-06-23 130139.png**, halaman ini memuat informasi profil modul praktikum pada bagian *header* berwarna biru. Area konten utama menampilkan deskripsi halaman, didampingi dengan *Widget Link* dan *Widget Text* di sisi kanan.
+
+### 2. Halaman Daftar Artikel
+Berdasarkan **Screenshot 2026-06-23 130126.png**, saat pengguna mengakses menu **Artikel** pada alamat `http://localhost:8080/artikel#`, sistem memuat dan menampilkan seluruh daftar konten artikel secara berurutan lengkap dengan judul dan potongan isi artikel teks pembuka.
+
+### 3. Halaman Kontak (Minimalis)
+Sesuai dengan visualisasi pada **Screenshot 2026-06-23 130154.png**, halaman **Kontak** merupakan komponen minimalis terpisah yang didesain untuk menampilkan informasi hubungi kami secara langsung dan ringkas di sudut layar.
+
+---
+
+## 💻 Struktur Organisasi Tampilan
+
+Aplikasi web ini dibagi menjadi beberapa blok layout utama:
+*   **Header**: Berisi judul aplikasi ("Layout Sederhana") dan informasi institusi pemilik/pembuat modul.
+*   **Navbar**: Menu navigasi horizontal utama (Home, Artikel, About, Kontak).
+*   **Main Content**: Area dinamis di sisi kiri tempat konten artikel atau informasi halaman dimuat.
+*   **Sidebar**: Area sebelah kanan yang menampung *Widget Header* dan komponen teks *Lorem Ipsum* statis.
+*   **Footer**: Catatan hak cipta tahun rilis aplikasi di bagian paling bawah halaman.
+
+---
+
+## ⚙️ Cara Menjalankan Tampilan
+
+1. Pastikan server backend Anda yang menyediakan data artikel sudah aktif dan berjalan di latar belakang.
+2. Buka folder proyek antarmuka ini di komputer Anda.
+3. Jalankan aplikasi web menggunakan local development server pilihan Anda (misalnya melalui ekstensi Live Server atau server node lokal).
+4. Akses alamat URL lokal melalui peramban browser Anda (contoh: `http://localhost:8080/artikel#`) untuk melihat sinkronisasi komponen secara langsung.

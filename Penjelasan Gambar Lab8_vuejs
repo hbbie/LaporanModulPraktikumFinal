@@ -1,0 +1,45 @@
+Berikut adalah penjelasan alur kerja dan fungsi dari antarmuka **Aplikasi Panel Single Page (SPA)** yang berbasis VueJS dan RESTful API CodeIgniter 4 berdasarkan urutan gambar yang Anda lampirkan:
+
+---
+
+### 1. Halaman Beranda (Menu Utama)
+
+Sesuai dengan file **Screenshot 2026-06-23 124442.png**, ini adalah tampilan awal aplikasi saat pengguna mengakses root URL (`/#/`).
+
+* **Fungsi:** Menampilkan teks selamat datang di "Portal Admin Artikel".
+* **Keterangan:** Komponen ini menjelaskan kepada pengguna bahwa aplikasi digunakan untuk mengelola data artikel secara *real-time* memanfaatkan kombinasi *backend* CodeIgniter 4 dan *frontend* VueJS.
+
+### 2. Halaman Manajemen Data Artikel (Kosong)
+
+Sesuai dengan file **Screenshot 2026-06-23 124509.png**, saat pengguna mengklik menu **Kelola Artikel**, rute berubah menjadi `/#/artikel`.
+
+* **Fungsi:** Menampilkan tabel utama manajemen artikel.
+* **Keterangan:** Pada kondisi awal ini, tabel masih kosong (belum memuat data). Terdapat sebuah tombol **Tambah Data** di atas tabel yang siap digunakan untuk menambahkan entri baru.
+
+### 3. Pop-up / Modal Tambah Data
+
+Sesuai dengan file **Screenshot 2026-06-23 124531.png**, ketika tombol "Tambah Data" ditekan, aplikasi memunculkan sebuah dialog penambahan data (*modal* overlay).
+
+* **Fungsi:** Menginput artikel baru ke dalam sistem.
+* **Keterangan:** Terdapat input field untuk **Judul Artikel**, textarea untuk **Isi Artikel**, serta dropdown status (default: *Draft*). Pengguna dapat menekan tombol **Simpan** untuk mengirim data ke API atau **Batal** untuk menutup modal.
+
+### 4. Pop-up / Modal Ubah Data (Edit)
+
+Sesuai dengan file **Screenshot 2026-06-23 124545.png**, jika pengguna mengklik aksi "Edit" pada salah satu baris artikel yang sudah ada, modal yang mirip akan muncul namun dengan fungsi yang berbeda.
+
+* **Fungsi:** Mengubah informasi artikel yang sudah tersimpan.
+* **Keterangan:** Judul modal berubah menjadi **Ubah Data** dan form secara otomatis terisi (*pre-filled*) dengan data lama (contoh pada gambar: judul "rapli" dan isi "apit6666"). Pengguna bisa memperbaruinya lalu menekan **Simpan**.
+
+### 5. Konfirmasi Hapus Data
+
+Sesuai dengan file **Screenshot 2026-06-23 124604.png**, ketika pengguna memilih opsi aksi "Hapus" pada salah satu data artikel.
+
+* **Fungsi:** Mencegah penghapusan data secara tidak sengaja melalui *alert confirmation*.
+* **Keterangan:** Browser memunculkan *pop-up* bawaan (*localhost says*) dengan pesan *"Yakin menghapus data?"*. Jika pengguna memilih **OK**, aplikasi akan mengirimkan request `DELETE` ke RESTful API CodeIgniter 4.
+
+### 6. Tampilan Tabel Setelah Sinkronisasi Data
+
+Sesuai dengan file **Screenshot 2026-06-23 124640.png**, ini adalah visualisasi tabel manajemen artikel setelah beberapa operasi (tambah, edit, atau hapus) selesai dilakukan.
+
+* **Fungsi:** Menampilkan seluruh daftar artikel yang aktif di database.
+* **Keterangan:** Data ditampilkan secara rapi dalam kolom ID, Judul, Status, dan Aksi (berisi link *Edit* dan *Hapus*). Karena ini adalah aplikasi SPA, setiap perubahan data di modal sebelumnya akan langsung memperbarui isi tabel ini secara instan tanpa perlu memuat ulang (*reload*) seluruh halaman browser.
